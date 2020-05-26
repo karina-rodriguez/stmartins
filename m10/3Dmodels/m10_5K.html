@@ -1,0 +1,51 @@
+<!-- To produce the 3D  model here, go to bakinglearningtestingagain.blend. The high-poly
+coming from the photoscan needs to be simplified to low poly - using a box. Then
+we bake two things: normals and diffuse (but only colour). These two maps are applied
+to the low poly, and saved as an embedded gltf
+Best value is strength 0.5 for  the baked normal map -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D house with A-Frame</title>
+    <meta name="description" content="3D Model (glTF) — A-Frame">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+<!--     <a-scene background="color: #FAFAFA">
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+    </a-scene> -->
+    
+  <a-scene background="color: #ECECEC">
+    <a-assets>
+
+      <a-asset-item id="houseModel1" src="m6_5K_1024tex.glb"></a-asset-item>
+      <a-asset-item id="houseModel2" src="m8_5K_1024tex.glb"></a-asset-item>
+      <a-asset-item id="houseModel3" src="m9_5K_1024tex.glb"></a-asset-item>
+      <a-asset-item id="houseModel4" src="m10_5K_1024tex.glb"></a-asset-item>
+    </a-assets>
+<!--       <a-sky color="#AAD0D2"></a-sky>
+ --> <a-entity daydream-controls></a-entity>
+
+     <a-entity light="type: ambient; color: #FFF; intensity: 0.5" position="100 20 20"></a-entity>
+     <a-entity light="type: ambient; color: #FFF; intensity: 0.5" position="100 20 -60"></a-entity>
+     <a-entity light="type: ambient; color: #FFF; intensity: 0.5" position="100 20 20"></a-entity>
+   
+<!--  <a-light type="ambient" color="#868686"></a-light>
+ -->   <a-entity id="the3Dmodel1" gltf-model="#houseModel1"  rotation="180 -90 90" position="-3 2 -3"></a-entity>
+       <a-entity id="the3Dmodel2" gltf-model="#houseModel2"  rotation="0 -90 90" position="-2 3 -6"></a-entity>
+       <a-entity id="the3Dmodel3" gltf-model="#houseModel3"  rotation="0 -90 90" position="3 3 -6"></a-entity>
+       <a-entity id="the3Dmodel4" gltf-model="#houseModel4"  rotation="0 -90 90" position="6 3 -6"></a-entity>
+<!-- ></a-entity>
+ rotation="0 180 -90" scale="0.8 0.8 0.8" position="0 0.5 -4"></a-entity>
+ -->    
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#0C8D15" shadow></a-plane>
+
+  </a-scene>
+<!--     <script src="scriptexample.js"></script>
+ -->
+  </body>
+</html>
